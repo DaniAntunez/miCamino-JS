@@ -266,5 +266,7 @@ let suma = 0;
 for (let i = 0; i < miCamino.cimas.length; i++) {
   suma += miCamino.cimas[i].altitud;
 }
-console.log(suma);  
+console.log("Suma total: ", suma); 
+console.log("Media: ", suma / miCamino.cimas.length); 
+
 
