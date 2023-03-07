@@ -184,15 +184,15 @@ const miCamino = {
 //vamos a imaginarnos que vamos a narrar la historia de como subi los 14 ochomiles y esta historia solo puede ser contada a traves de console.log, es decir,
 
 // primer paso: vamos a empezar nuestro camino de la mejor manera y esa no puede ser de otra manera que dando el primer paso, por tanto vamos a decir: Lo mas importante es {inicio}
-
+console.log("===EJERCICIO 01===");
 console.log(`Lo mas importante es ${miCamino.inicio}`);
 
 //2º: vamos a decir : El objetivo de mi camino es : {objetivo}
-
+console.log("===EJERCICIO 02===");
 console.log(`El objetivo de mi camino es ${miCamino.objetivo}`);
 
 //3º : vamos a decir : El material que debo llevar es:
-
+console.log("===EJERCICIO 03===");
 console.log(`El material que debo llevar es:`);
 
 //4º: en este paso ya empezaremos a toquetear con bucles y le vamos a decir: 
@@ -200,22 +200,20 @@ console.log(`El material que debo llevar es:`);
 // lo segundo que debo  llevar es {nombre del segundo material} y es { su descripcion}
 // lo tercero que debo  llevar es {nombre del tercer material} y es { su descripcion}
 // y por ultimo debo llevar la {mochila} que es {su descripcion}
-
+console.log("===EJERCICIO 04===");
 for (let index = 0; index < miCamino.material.length; index++) {
   const elemento = miCamino.material[index];
   //console.log(elemento["nombre"]);
   //console.log(elemento["descripcion"]);
   }
 //console.log(miCamino.material.length);
-
 console.log(`Lo primero que debo llevar es ${miCamino.material[0].nombre} y es ${miCamino.material[0].descripcion}`);
 console.log(`Lo segundo que debo llevar es ${miCamino.material[1].nombre} y es ${miCamino.material[1].descripcion}`);
 console.log(`Lo tercero que debo llevar es ${miCamino.material[2].nombre} y es ${miCamino.material[2].descripcion}`);
 console.log(`Y por último debo llevar la ${miCamino.material[3].nombre} que es ${miCamino.material[3].descripcion}`);
 
-
 //5º: vamos a decir: para subir al {nombre de la cima}  debo subir {altura} metros y debo viajar a {ubicacion}
-
+console.log("===EJERCICIO 05===");
 for (let index = 0; index < miCamino.cimas.length; index++) {
   const elemento = miCamino.cimas[index];
   //console.log(elemento["nombre"]);
@@ -225,14 +223,48 @@ for (let index = 0; index < miCamino.cimas.length; index++) {
   }
 //console.log(miCamino.cimas.length);
 
-//6º: para llegar a la cima tendremos que darnos aliento y decirnos la frase que esta divida y que tiene que quedar así: "Tranquilo,lo peor ha pasado ya.¡Animo!
-
-for (let index = 0; index < miCamino.subiendoAlEverest.length; index++) {
-  const elemento = miCamino.subiendoAlEverest[index];
-  console.log(elemento.campoBase);
-  //console.log(`Para subir al ${miCamino.cimas[index].nombre} debo subir ${miCamino.cimas[index].altitud} metros y debo viajar a ${miCamino.cimas[index].localizacion}`)
+//6º: para llegar a la cima tendremos que darnos aliento y decirnos la frase que esta divida y que tiene que quedar así: "Tranquilo lo peor ha pasado ya.¡Animo!
+console.log("===EJERCICIO 06===");
+//console.log(miCamino.subiendoAlEverest[0][0].campoBase[0].campoI.campoII.campoIII.campoIV.length - 1);
+//console.log(miCamino.subiendoAlEverest[0][0].campoBase[0].campoI.campoII.campoIII.campoIV[7]);
+let frase = [];
+for (let i = 0; i < (miCamino.subiendoAlEverest[0][0].campoBase[0].campoI.campoII.campoIII.campoIV.length); i++) {
+  const palabra = miCamino.subiendoAlEverest[0][0].campoBase[0].campoI.campoII.campoIII.campoIV[i];
+  //console.log(palabra);
+  if (typeof(palabra) === "string") {
+    frase.push(palabra);
   }
+}
+console.log(frase.join(" "));
 
 //7º: mostraremos el mensaje final guardado en la cima
+console.log("===EJERCICIO 07===");
+console.log(miCamino.subiendoAlEverest[0][0].campoBase[0].campoI.campoII.campoIII.campoIV[8].cima);
 
 //por ultimo como bonus,en un console.log mostraremos por pantalla las urls de todas las imagenes de los materiales y en otro haremos la media de la altitud de todas la cimas que hemos subido.
+console.log("===BONUS 01===");
+for (let i = 0; i < miCamino.material.length; i++) {
+  const material = miCamino.material[i];
+
+  for (let j = 0; j < material.imagenes.length; j++) {
+    const imagen = material.imagenes[j];
+
+    if (imagen.imagen1) {
+      console.log(imagen.imagen1.url);
+    } else {
+      console.log(imagen.imagen2.url);
+    }
+  }
+}
+
+console.log("===BONUS 02===");
+
+//console.log(miCamino.cimas[0].altitud);
+//console.log(miCamino.cimas.length);
+
+let suma = 0;
+for (let i = 0; i < miCamino.cimas.length; i++) {
+  suma += miCamino.cimas[i].altitud;
+}
+console.log(suma);  
+
